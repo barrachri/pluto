@@ -34,7 +34,7 @@ async def main(request):
     oauth_token = os.environ.get("GH_AUTH")
 
     # a representation of GitHub webhook event
-    event = sansio.Event.from_http(request.headers, body, secret=secret)
+    event = sansio.Event.from_http(request.headers, body)
 
     # instead of mariatta, use your own username
     async with aiohttp.ClientSession() as session:
