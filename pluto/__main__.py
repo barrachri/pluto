@@ -7,8 +7,9 @@ from gidgethub import routing, sansio
 from gidgethub import aiohttp as gh_aiohttp
 
 from . import pull_request
+from . import comments
 
-router = routing.Router(pull_request.router)
+router = routing.Router(pull_request.router, comments.router)
 
 
 async def test(request):

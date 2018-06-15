@@ -2,6 +2,7 @@ import gidgethub.routing
 
 router = gidgethub.routing.Router()
 
+
 @router.register("pull_request", action="opened")
 async def pull_request_opened_event(event, gh, *args, **kwargs):
     """ Whenever an issue is opened, greet the author and say thanks."""
