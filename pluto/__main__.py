@@ -49,7 +49,7 @@ async def main(request):
 
 if __name__ == "__main__":
     app = web.Application()
-    app.router.add_get("/test", main)
+    app.router.add_get("/test", test)
     app.router.add_post("/", main)
     port = os.environ.get("PORT")
     if port is not None:
