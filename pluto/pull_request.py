@@ -1,7 +1,5 @@
 import gidgethub.routing
 
-from . import util
-
 router = gidgethub.routing.Router()
 
 @router.register("pull_request", action="opened")

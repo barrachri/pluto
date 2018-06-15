@@ -3,8 +3,6 @@ import os
 from aiohttp import web
 import aiohttp
 
-from aiohttp import web
-
 from gidgethub import routing, sansio
 from gidgethub import aiohttp as gh_aiohttp
 
