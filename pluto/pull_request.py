@@ -25,10 +25,10 @@ async def delete_branch(event, gh, *args, **kwargs):
     if event.data["pull_request"]["merged"]:
         issue_number = event.data['pull_request']['number']
         merged_by = event.data['pull_request']['merged_by']['login']
-        if merged_by != "miss-islington":
-            await util.leave_comment(gh, issue_number, f"Thanks, @{merged_by}!")
-        else:
-            await util.leave_comment(gh, issue_number, "Thanks!")
+
+        url = event.data["pull_request"]["comments_url"]
+
+        await gh.post(url, data={"body": f"Thanks, @{merged_by}!")
 
         branch_name = event.data['pull_request']['head']['ref']
         repository = event.data['repository']['"full_name"']
