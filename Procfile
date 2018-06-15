@@ -1,1 +1,1 @@
-python3 -m pluto
+web: python3 -m pluto
