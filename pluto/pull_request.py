@@ -31,7 +31,7 @@ async def delete_branch(event, gh, *args, **kwargs):
         await gh.post(url, data={"body": f"Thanks, @{merged_by}!"})
 
         branch_name = event.data['pull_request']['head']['ref']
-        repository = event.data['repository']['"full_name"']
+        repository = event.data['repository']['full_name']
 
         url = f"/repos/{repository}/git/refs/heads/{branch_name}"
 
